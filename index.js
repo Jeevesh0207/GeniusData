@@ -2,6 +2,7 @@ const express=require('express')
 const bodyParser=require('body-parser')
 const cors=require('cors')
 const SongData = require('./routes/SongData')
+const GetPoster = require('./routes/GetPoster')
 
 const app=express()
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.use('/',SongData)
+app.use('/',GetPoster)
 
 const port=8000
 const server=app.listen(port,()=>{
