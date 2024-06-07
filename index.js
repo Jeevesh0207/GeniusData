@@ -19,6 +19,13 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use('/',SongData)
 app.use('/',GetPoster)
 
+app.get('/',(req,res)=>{
+    res.send({
+        success:true,
+        msg:"Genius Data"
+    })
+})
+
 const port=8000
 const server=app.listen(port,()=>{
     console.log(`Backend Run on Port: ${port}`)
